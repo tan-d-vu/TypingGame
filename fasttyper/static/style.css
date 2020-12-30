@@ -1,0 +1,188 @@
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Ubuntu Mono';
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+Layout
+--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.masthead h1 {
+    text-align: center;
+}
+
+.intro {
+    padding: 0em 2em;
+    margin-bottom: 2em;
+}
+
+.intro p,
+.test-area,
+.id_player_name {
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+.test-area {
+    margin-bottom: 4em;
+    padding: 0 2em;
+}
+
+.test-wrapper,
+#id_player_name,
+.timer,
+#reset,
+#submit,
+#leaderboard-button,
+#origin-text {
+    border: 5px solid black;
+}
+
+#origin-text {
+    margin: 1em 0;
+    padding: 1em 1em 0;
+}
+
+#origin-text p {
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+.test-wrapper {
+    display: flex;
+}
+
+.test-wrapper textarea {
+    flex: 1;
+}
+
+.meta,
+.submit {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timer {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#reset,
+#submit,
+#leaderboard-button {
+    padding: .5em 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+    background: white;
+}
+
+#reset:hover,
+#submit:hover,
+#leaderboard-button:hover,
+.timer:hover {
+    color: white;
+    background-color: black;
+}
+
+
+/* Leaderboard */
+/* Background */
+
+.leaderboard-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Content */
+
+.leaderboard-modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 0;
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.leaderboard-modal-body {
+    padding: 2px 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaderboard-modal-content table,
+.leaderboard-modal-content tr {
+    table-layout: fixed;
+    border: 5px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.leaderboard-modal-content table {
+    width: 100%;
+}
+
+/* Overflow */
+.overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
