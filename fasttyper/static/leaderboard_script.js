@@ -12,6 +12,6 @@ btn.onclick = function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == leaderboard) {
-    modal.style.display = "none";
+    leaderboard.style.display = "none";
   }
 }
