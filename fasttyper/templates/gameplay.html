@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JS Typing Speed Test</title>
     <script src="{% static 'leaderboard_script.js' %}" defer></script>
-    <script src="{% static 'typinggame_script.js' %}" async></script>
+    <script src="{% static 'typinggame_script.js' %}" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
@@ -42,8 +42,10 @@
             
             <div id="main-area">
                 <form method="post" action="">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="Y4xG2MRlYGtzXDzPNuwTrPGvspliv2WI2c1ROY8EiRDmOv9NE5I2WAA1axJnlwQt">
-                    <table> <tr><th><label for="id_player_name">Player name:</label></th><td><input type="text" name="player_name" maxlength="32" required id="id_player_name"><input type="hidden" name="player_score" id="id_player_score"></td></tr> </table>
+                    {% csrf_token %} 
+
+                    <tr><th><label for="id_player_name">Player name:</label></th><td><input type="text" name="player_name" maxlength="32" required id="id_player_name">
+                    <input type="hidden" name="player_score" id="id_player_score"></td></tr>
 
                     <div id="origin-text">
                         <p class="overflow">{{originText}}</p>

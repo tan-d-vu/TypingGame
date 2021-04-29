@@ -7,6 +7,7 @@ const wpmAnnouncement = document.querySelector(".wpm-announcement");
 const submitButton = document.querySelector("#submit");
 
 let displayOriginText = document.querySelector("#origin-text");
+
 let timer = [0, 0, 0, 0];
 let interval;
 let timerRunning = false;
@@ -63,9 +64,10 @@ function spellCheck() {
         }
     }
 
+    populateHiddenField(wpm);    
     wpmAnnouncement.innerHTML = "Your Word per Minute (WPM) is " +
         wpm + " and you made " + error + " errors.";
-
+    
 }
 
 // Start the timer + wpm counter:
@@ -111,6 +113,7 @@ function populateHiddenField(wpm_count) {
 testArea.addEventListener("keydown", start, false);
 testArea.addEventListener("keyup", (event) => {
         if (event.key == 'Enter') {
+            populateHiddenField(wpm);
             stop();
         }
     },
@@ -118,3 +121,4 @@ testArea.addEventListener("keyup", (event) => {
 
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
+submitButton.addEventListener("click", populateHiddenField(wpm), false);

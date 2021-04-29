@@ -33,6 +33,7 @@ def gameplay(request):
             playerInfoForm.save(commit=True)
             return returner
     else:
+        print("not saved")
         playerInfoForm = PlayerInfo()
 
     return returner
